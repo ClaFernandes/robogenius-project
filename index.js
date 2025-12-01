@@ -1,0 +1,22 @@
+// Change navbar background on scroll
+const navbar = document.querySelector('.navbar')
+
+function atualizarNavbar() {
+    if (window.scrollY > 0) {
+        navbar.classList.add('navbar--scroll')
+    } else {
+        navbar.classList.remove('navbar--scroll')
+    }
+}
+
+window.addEventListener('scroll', atualizarNavbar)
+
+//Toggle mobile menu
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('.navbar .mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.navbar .mobile-menu-items');
+
+    toggleButton.addEventListener('click', function () {
+        mobileMenu.classList.toggle('active');
+    })
+});
