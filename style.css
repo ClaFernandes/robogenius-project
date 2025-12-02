@@ -52,6 +52,31 @@ img {
     font-weight: 650;
 }
 
+/* Whatsapp */
+.whatsapp-button {
+    position: fixed;
+    top: 50%;
+    /* coloca no meio da tela */
+    left: 20px;
+    /* distancia da lateral esquerda */
+    transform: translateY(-50%);
+    /* centraliza verticalmente */
+    z-index: 999;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
+}
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -469,29 +494,29 @@ img {
 
 .testimonial-card::before {
     content: "“";
-    font-size: 60px;
+    font-size: 80px;
     color: var(--primary-color);
     position: absolute;
     top: -25%;
-    left: 52%;
+    left: 45%;
 }
 
 .testimonial-title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 10px;
     color: var(--primary-color);
 }
 
 .testimonial-text {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--dark-color);
 }
 
 .testimonial-name {
     font-weight: bold;
     color: var(--secondary-color);
-    font-size: 14px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -625,19 +650,21 @@ img {
 
 .contact h2 {
     color: var(--primary-color);
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .contact p {
-    font-size: 30px;
-    padding: 60px 0;
+    font-size: 22px;
+    padding: 40px 0;
+    opacity: 0.9;
 }
 
 .contact form {
     margin-top: 40px;
     display: flex;
-    gap: 50px;
+    gap: 60px;
     align-items: center;
 }
 
@@ -645,36 +672,34 @@ img {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.field,
-.message-field {
-    position: relative;
-    width: 100%;
+    gap: 30px;
 }
 
 .field input,
 .message-field textarea {
     font-family: inherit;
     width: 100%;
-    padding: 15px;
-    border: 2px solid var(--primary-color);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.07);
+    padding: 22px 20px;
+    border: 3px solid var(--primary-color);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
     color: var(--dark-color);
-    font-size: 16px;
-    transition: 0.3s;
+    font-size: 18px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .message-field textarea {
     height: 100%;
+    min-height: 260px;
+    resize: none;
 }
 
 .field input:focus,
 .message-field textarea:focus {
     border-color: var(--secondary-color);
-    box-shadow: 0 0 5px var(--secondary-color);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1), 0 0 8px var(--secondary-color);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .message-field {
@@ -684,31 +709,34 @@ img {
 
 .send {
     grid-column: 1 / 3;
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .send .btn {
     background: var(--primary-color);
     color: white;
-    width: 250px;
-    height: 60px;
-    padding: 12px 32px;
-    border-radius: 30px;
+    width: 280px;
+    height: 70px;
+    padding: 16px 38px;
+    border-radius: 35px;
     border: none;
     cursor: pointer;
     transition: .3s;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .send .btn:hover {
     background: var(--secondary-color);
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .contact-right img {
-    width: 500px;
+    width: 520px;
     max-width: 100%;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.1));
 }
 
 /* Media Query */
@@ -971,7 +999,6 @@ img {
     .plan,
     .recommended-tag {
         width: 90%;
-        /* ocupar quase toda a tela */
         padding: 20px;
     }
 
@@ -996,57 +1023,71 @@ img {
     .plan .btn,
     .recommended-tag .btn {
         width: 100%;
-        /* botão ocupa toda largura do card */
         font-size: 0.9rem;
         text-align: center;
     }
 
     /* Contact */
     .contact {
-        padding: 20px;
-        margin-top: 60px;
+        margin: 60px 20px;
+        padding-top: 20px;
     }
 
     .contact h2 {
-        font-size: 22px;
+        font-size: 30px;
+    }
+
+    .contact p {
+        font-size: 18px;
+        padding: 20px 0;
     }
 
     .contact form {
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
+        align-items: center;
     }
 
     .contact-left {
-        grid-template-columns: 1fr;
-        gap: 15px;
         width: 100%;
-    }
-
-    .message-field {
-        grid-column: 1;
-        grid-row: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .field input,
     .message-field textarea {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 16px;
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .message-field {
+        grid-column: unset;
+        grid-row: unset;
+        width: 100%;
+    }
+
+    .message-field textarea {
+        min-height: 180px;
     }
 
     .send {
-        grid-column: 1;
+        grid-column: unset;
         margin-top: 10px;
+        width: 100%;
+        text-align: center;
     }
 
     .send .btn {
         width: 100%;
-        font-size: 14px;
-        padding: 12px 0;
+        max-width: 260px;
+        height: 60px;
+        font-size: 16px;
     }
 
     .contact-right img {
-        width: 90%;
-        margin: 0 auto;
-        display: block;
+        width: 280px;
+        margin-top: 20px;
     }
 }
